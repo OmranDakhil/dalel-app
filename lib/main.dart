@@ -1,9 +1,14 @@
+import 'package:dalel1/core/database/cache_helper.dart';
+import 'package:dalel1/core/services/service_locater.dart';
 import 'package:dalel1/core/utils/app_colors.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'core/routes/app_router.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setup();
+  await getIt<CacheHelper>().init();
   runApp(DevicePreview(enabled: true, builder: (context) => const Dalel()));
 }
 

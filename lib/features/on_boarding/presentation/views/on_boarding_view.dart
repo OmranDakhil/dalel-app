@@ -1,8 +1,11 @@
 import 'package:dalel1/core/functions/navigation.dart';
 import 'package:dalel1/core/widgets/custom_button_widget.dart';
 import 'package:dalel1/features/on_boarding/data/models/on_boarding_body_model.dart';
+import 'package:dalel1/features/on_boarding/presentation/views/functions/onboarding.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/database/cache_helper.dart';
+import '../../../../core/services/service_locater.dart';
 import '../widgets/get_buttons.dart';
 import '../widgets/onboarding_body_widget.dart';
 import '../widgets/skip_button_widget.dart';
@@ -28,6 +31,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               const SizedBox(height: 40),
               SkipButtonWidget(
                 onPressed: () {
+                  onBoardingVisited();
                   customReplacmentNavigate(context, "/signIn");
                 },
               ),

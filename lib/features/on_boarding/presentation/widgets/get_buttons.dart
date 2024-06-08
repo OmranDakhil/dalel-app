@@ -1,5 +1,6 @@
 import 'package:dalel1/core/utils/app_colors.dart';
 import 'package:dalel1/core/utils/app_text_styles.dart';
+import 'package:dalel1/features/on_boarding/presentation/views/functions/onboarding.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/functions/navigation.dart';
@@ -20,12 +21,14 @@ class GetButtons extends StatelessWidget {
               CustomButtonWidget(
                 title: "Create Account",
                 onPressed: () {
+                  onBoardingVisited();
                   customReplacmentNavigate(context, "/signUp");
                 },
               ),
               const SizedBox(height: 16),
               TextButton(
                   onPressed: () {
+                    onBoardingVisited();
                     customReplacmentNavigate(context, "/signIn");
                   },
                   child: Text(
